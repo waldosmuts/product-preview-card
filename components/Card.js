@@ -13,6 +13,10 @@ export default function Card() {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
+    useEffect(() => {
+        setScreenWidth(window.innerWidth)
+    }, [])
+
     return (
         <div className="bg-white rounded-lg overflow-hidden flex flex-col lg:grid lg:grid-cols-2 w-full max-w-[600px]">
             <Image
@@ -30,7 +34,7 @@ export default function Card() {
                     <h3 className="font-fraunces text-3xl text-primary-cyan">$149.99</h3>
                     <span className="font-montserrat text-xs line-through text-neutral-gray-blue">$169.99</span>
                 </div>
-                <button className="bg-primary-cyan text-white w-full rounded-md py-[14px] font-montserrat text-sm font-bold flex items-center justify-center mt-3 lg:mt-auto gap-x-3"><Image src="/icon-cart.svg" width="15px" height="16px" />Add to Cart</button>
+                <button className="bg-primary-cyan hover:bg-primary-dark-cyan text-white w-full rounded-md py-[14px] font-montserrat text-sm font-bold flex items-center justify-center mt-3 lg:mt-auto gap-x-3"><Image src="/icon-cart.svg" width="15px" height="16px" />Add to Cart</button>
             </div>
         </div>
     )
